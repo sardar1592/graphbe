@@ -74,3 +74,53 @@ type Author{
     updated_at:DateTime!
 
 }
+
+type Mutation {
+
+    createBook(
+      title:String!
+      description:String!
+      type:String!
+      price:Int!
+      pages:Int
+      author_id:Int
+    ) : Book @create
+
+    updateBook(
+
+      id:ID!
+      title:String!
+      description:String!
+      type:String!
+      price:Int!
+      pages:Int
+      author_id:Int
+
+    ) : Book @update
+
+    deleteBook(id:ID!) : Book @delete
+
+    createAuthor(
+
+      name:String!
+      email:String!
+      phone:String!
+      address:String!
+      country:String!
+
+    ) : Author @create
+
+    updateAuthor(
+
+      id:ID!
+      name:String!
+      email:String!
+      phone:String!
+      address:String!
+      country:String!
+
+    ) :Author @update
+
+    deleteAuthor(id:ID!) : Author @delete
+
+}
